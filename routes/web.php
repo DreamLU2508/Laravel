@@ -41,3 +41,9 @@ Route::get('goiController',[MyController::class, 'xinchao']);
 
 
 Route::get('thamso/{ten}',[MyController::class, 'id']);
+
+Route::get('request',[MyController::class, 'myrequest']);
+
+Route::get('form', function () {
+    return view("form");
+});

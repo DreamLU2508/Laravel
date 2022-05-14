@@ -15,4 +15,12 @@ class MyController extends Controller
         echo "em tên là: ".$ten;
         return redirect()->route("route2");
     }
+
+    public function myrequest(Request $request)
+    {
+        if($request->isMethod("post"))
+            echo "dung";
+        else
+            echo "sai";
+    }
 }
