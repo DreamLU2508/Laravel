@@ -44,6 +44,20 @@ Route::get('thamso/{ten}',[MyController::class, 'id']);
 
 Route::get('request',[MyController::class, 'myrequest']);
 
+Route::post("form", [MyController::class, 'getForm'])->name('form.get');
+
 Route::get('form', function () {
     return view("form");
 });
+
+Route::get('setCookie',[MyController::class,'setCookie']);
+
+Route::get('getCookie',[MyController::class,'getCookie']);
+
+Route::get("upFile", function(){
+    return view("uploadFile");
+});
+
+Route::post("postFile", [MyController::class, "postFile"])->name('postFile');
+
+Route::get("json", [MyController::class,"Json"]);
