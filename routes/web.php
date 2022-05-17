@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,13 @@ view()->share("share", "các bờ lây ơ");
 Route::get("blade", [MyController::class, "Blade"]);
 
 Route::get("bladeTmp/{str}",[MyController::class, "BladeTMP"]);
+
+// database
+Route::get("database",function(){
+    Schema::create('loaisanpham',function($table){
+        $table->increments('id');
+        $table->string('ten',200);
+    });
+
+    echo "đã thực hiện lệnh tạo bảng";
+});

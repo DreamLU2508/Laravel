@@ -82,10 +82,12 @@ class MyController extends Controller
 
     public function BladeTMP($str)
     {
+        
+        $data = "<b>xin chào bố của các bờ lây ơ</b>";
         if($str == "php"){
-            return view('Pages.PHP');
+            return view('Pages.PHP', ['data'=> $data,'data1'=> ""]);
         }else{
-            return view('Pages.Laravel');
+            return view('Pages.Laravel', ['data'=>$data, 'data1'=> ""]);
         }
 
     }

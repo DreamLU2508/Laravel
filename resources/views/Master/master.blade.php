@@ -15,7 +15,6 @@
 
         @yield("Noidung")
 
-        <h1>Kết thúc</h1>
         
     </div>
     @include("Master.footer")
