@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MyController;
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -61,3 +62,11 @@ Route::get("upFile", function(){
 Route::post("postFile", [MyController::class, "postFile"])->name('postFile');
 
 Route::get("json", [MyController::class,"Json"]);
+
+Route::get('myView/{t}',[MyController::class,"MyView"]);
+
+view()->share("share", "các bờ lây ơ");
+
+Route::get("blade", [MyController::class, "Blade"]);
+
+Route::get("bladeTmp/{str}",[MyController::class, "BladeTMP"]);

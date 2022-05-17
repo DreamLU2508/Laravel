@@ -68,4 +68,25 @@ class MyController extends Controller
         //return $array;
         return response()->json($array);
     }
+
+    public function MyView($t)
+    {
+        return view('xinchao',['time'=>$t]);
+    }
+
+    public function Blade()
+    {
+        return view("Pages.PHP");
+    }
+
+
+    public function BladeTMP($str)
+    {
+        if($str == "php"){
+            return view('Pages.PHP');
+        }else{
+            return view('Pages.Laravel');
+        }
+
+    }
 }
